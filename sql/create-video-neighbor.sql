@@ -2,7 +2,7 @@
 -- Top X similar videos for each video
 CREATE EXTERNAL TABLE `video_neighbor`(
   `s3key` string, 
-  `neighbors` array<struct<distance:float,s3key:string>>)
+  `neighbors` array<struct<distance:double,s3key:string>>)
 ROW FORMAT SERDE 
   'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe' 
 STORED AS INPUTFORMAT 
