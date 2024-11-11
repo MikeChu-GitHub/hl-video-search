@@ -6,6 +6,7 @@ from pymilvus import Collection, MilvusClient
 print("Reading video-vector...")
 df = pd.read_parquet(os.getenv('VIDEO_VECTOR_PATH'), engine='pyarrow')
 vectors = df.set_index('s3key')['embeddings'].to_dict()
+print(f"Total vector count = {len(vectors)}")
 
 print("Reading vector-db...")
 milvus = MilvusClient(os.getenv('MILVUS_DB_PATH'))

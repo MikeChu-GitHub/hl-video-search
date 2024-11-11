@@ -7,7 +7,7 @@ CREATE EXTERNAL TABLE `twelve_labs_vector`(
   `s3size` int, 
   `processedon` timestamp, 
   `url` string, 
-  `embedding` array<struct<id:string,engine:string,task_status:string,exception:string,embeddings:array<float>,start_offset_sec:float,end_offset_sec:float,embedding_scope:string>>)
+  `embedding` array<struct<id:string,engine:string,task_status:string,exception:string,embeddings:array<double>,start_offset_sec:double,end_offset_sec:double,embedding_scope:string>>)
 ROW FORMAT SERDE 
   'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe' 
 STORED AS INPUTFORMAT 
